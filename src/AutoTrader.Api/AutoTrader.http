@@ -1,0 +1,6 @@
+@AutoTrader_HostAddress = http://localhost:5276
+
+GET {{AutoTrader_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

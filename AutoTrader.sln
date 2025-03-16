@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTrader.Api", "src\AutoTrader.Api\AutoTrader.Api.csproj", "{93754970-9C26-43C7-A2B7-1E6AAD243C2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTrader.Abstractions", "src\AutoTrader.Abstractions\AutoTrader.Abstractions.csproj", "{BFD55F17-655A-40F1-8B75-313FF9EAD98D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution Itens", "{4A297B71-B7F3-6B3F-A273-9FA2266310A5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTrader.Application", "src\AutoTrader.Application\AutoTrader.Application.csproj", "{2F655DF0-CB89-4190-A7A4-5079FEFF47D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTrader.Infrastructure", "src\AutoTrader.Infrastructure\AutoTrader.Infrastructure.csproj", "{6517D16F-8607-4942-A4D3-DCB6CEF62716}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93754970-9C26-43C7-A2B7-1E6AAD243C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93754970-9C26-43C7-A2B7-1E6AAD243C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93754970-9C26-43C7-A2B7-1E6AAD243C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93754970-9C26-43C7-A2B7-1E6AAD243C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD55F17-655A-40F1-8B75-313FF9EAD98D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD55F17-655A-40F1-8B75-313FF9EAD98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD55F17-655A-40F1-8B75-313FF9EAD98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD55F17-655A-40F1-8B75-313FF9EAD98D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F655DF0-CB89-4190-A7A4-5079FEFF47D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F655DF0-CB89-4190-A7A4-5079FEFF47D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F655DF0-CB89-4190-A7A4-5079FEFF47D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F655DF0-CB89-4190-A7A4-5079FEFF47D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6517D16F-8607-4942-A4D3-DCB6CEF62716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6517D16F-8607-4942-A4D3-DCB6CEF62716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6517D16F-8607-4942-A4D3-DCB6CEF62716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6517D16F-8607-4942-A4D3-DCB6CEF62716}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
