@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "AutoTrader.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5276",
+      "launchUrl": "swagger/index.html",
+      "environmentVariables": {
+        "ELASTIC_APM_SERVER_URL_": "http://192.168.15.163:9200",
+        "ELASTIC_APM_API_KEY_": "TFdRNUs1VUIzbmlQc1doeU1FYm86RXd3VUlfMnBUTC1sdTVqRFZySXdpdw==",
+        "ELASTIC_APM_SECRET_TOKEN_": "ixcJYzqN",
+        "ELASTIC_APM_SECRET_PASSWORD_": "ixcJYzqN",
+        "ELASTIC_APM_SERVICE_NAME_": "AUTOTRADER-API",
+        "ELASTIC_APM_ENVIRONMENT_": "Dev",
+        "ELASTIC_APM_VERIFY_SERVER_CERT_": "false",
+        "ELASTIC_APM_CAPTURE_BODY_": "all",
+        "ELASTIC_APM_CAPTURE_HEADERS_": "true",
+        "ELASTIC_APM_ENABLED_": "true",
+        "ELASTIC_APM_SANITIZE_FIELD_NAMES_": "abobrinha",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "dont_use": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5276",
+      "launchUrl": "swagger/index.html",
+      "environmentVariables": {
+        "ELASTIC_APM_TRANSACTION_SAMPLE_RATE": "1.0"
+      }
+    }
+  }
+}

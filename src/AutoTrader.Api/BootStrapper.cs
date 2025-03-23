@@ -1,14 +1,26 @@
-using System;
 using System.Text.Json.Serialization;
 using AutoTrader.Api.Filters;
 using AutoTrader.Api.Converters;
 using Microsoft.OpenApi.Models;
-
+using Elastic.Apm.DiagnosticSource;
+using Elastic.Apm.AspNetCore.DiagnosticListener;
 
 namespace AutoTrader.Api;
 
 public static class BootStrapper
 {
+    public static IServiceCollection AddElasticApmConfiguration(
+        this IServiceCollection services)
+    {
+        services.AddElasticApm(
+            new HttpDiagnosticsSubscriber(),
+            new AspNetCoreDiagnosticSubscriber()
+            // new EfCoreDiagnosticsSubscriber()
+            );
+
+        return services;
+    }
+
     public static IServiceCollection AddControllerAndFilters(
         this IServiceCollection services,
         Action<IMvcBuilder> action = default!)
@@ -95,5 +107,12 @@ public static class BootStrapper
         app.MapControllers();
         app.MapGet("/", () => "Ok").WithName("Probe");
         return app;
+    }
+}
+
+internal class EfCoreDiagnosticsSubscriber
+{
+    public EfCoreDiagnosticsSubscriber()
+    {
     }
 }
