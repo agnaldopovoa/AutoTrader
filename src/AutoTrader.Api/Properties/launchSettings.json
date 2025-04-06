@@ -9,17 +9,19 @@
       "launchUrl": "swagger/index.html",
       "environmentVariables": {
         "ELASTIC_APM_SERVER_URL_": "http://192.168.15.163:9200",
-        "ELASTIC_APM_API_KEY_": "TFdRNUs1VUIzbmlQc1doeU1FYm86RXd3VUlfMnBUTC1sdTVqRFZySXdpdw==",
-        "ELASTIC_APM_SECRET_TOKEN_": "ixcJYzqN",
-        "ELASTIC_APM_SECRET_PASSWORD_": "ixcJYzqN",
+        "ELASTIC_APM_SECRET_TOKEN_": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE3NDI2Njg2ODgsImV4cCI6MzMzMzExMTM0ODgsImF1ZCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9hZ25hbGRvcG92b2EvQXV0b1RyYWRlciIsInN1YiI6ImFnbmFsZG9wb3ZvYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsIjoiYWduYWxkb3Bvdm9hQGdtYWlsLmNvbSJ9.wKorGFmGujwA8Od22GBq0mKFIX_Kcv-3YLfLe6ztwIU",
         "ELASTIC_APM_SERVICE_NAME_": "AUTOTRADER-API",
-        "ELASTIC_APM_ENVIRONMENT_": "Dev",
+        "ELASTIC_APM_ENVIRONMENT_": "Development",
         "ELASTIC_APM_VERIFY_SERVER_CERT_": "false",
         "ELASTIC_APM_CAPTURE_BODY_": "all",
         "ELASTIC_APM_CAPTURE_HEADERS_": "true",
         "ELASTIC_APM_ENABLED_": "true",
         "ELASTIC_APM_SANITIZE_FIELD_NAMES_": "abobrinha",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "APPLICATION_VERSION" : "0.0.1",
+        "APPLICATION_NAME" : "AutoTrader.Api",
+        "APPLICATION_DESCRIPTION" : "Robot to cryptocurrencies trades automation",
+        "APOVOA_URI": "https://github.com/agnaldopovoa"
       }
     },
     "dont_use": {

@@ -2,6 +2,7 @@ using System;
 using AutoTrader.Abstractions.Handlers;
 using AutoTrader.Application.WeatherForecast.Queries;
 using AutoTrader.Application.WeatherForecast.Data;
+using Microsoft.Extensions.Logging;
 
 namespace AutoTrader.Infrastructure.WeatherForecast;
 
@@ -13,9 +14,18 @@ public class ListWeatherForecastsRepository
         "Freezing", "Cool", "Mild", "Warm", "Scorching"
     ];
 
+    private readonly ILogger<ListWeatherForecastsRepository> logger;
+
+    public ListWeatherForecastsRepository(ILogger<ListWeatherForecastsRepository> logger)
+        : base(/*logger*/)
+    {
+        this.logger = logger;
+    }
+
     protected async override Task<IEnumerable<ListWeatherForecastsResponse>> Execute(
         ListWeatherForecastsQuery request, CancellationToken cancellationToken)
     {
+        logger.LogInformation("   **********     ListWeatherForecastsRepository.Execute     **********");
         var forecasts = await Task.Run(
             () => Enumerable.Range(1,Random.Shared.Next(3, 7)).Select(
                     index => {

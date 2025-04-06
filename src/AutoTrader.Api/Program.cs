@@ -3,7 +3,8 @@ using AutoTrader.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
+builder.AddSerilog(builder.Configuration, "AutoTrader.Api"); // Add Serilog
 builder.Services.AddElasticApmConfiguration(); // Add Elastic APM
 builder.Services.AddHttpContextAccessor();     // Add access to IHttpContextAccessor
 builder.Services.AddEndpointsApiExplorer();    // Required for Minimal APIs

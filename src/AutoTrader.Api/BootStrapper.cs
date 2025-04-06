@@ -4,11 +4,44 @@ using AutoTrader.Api.Converters;
 using Microsoft.OpenApi.Models;
 using Elastic.Apm.DiagnosticSource;
 using Elastic.Apm.AspNetCore.DiagnosticListener;
+using Serilog;
+using Serilog.Exceptions;
+using Elastic.Apm.SerilogEnricher;
+using Serilog.Sinks.Elasticsearch;
+using Elastic.CommonSchema.Serilog;
+
 
 namespace AutoTrader.Api;
 
 public static class BootStrapper
 {
+    public static WebApplicationBuilder AddSerilog(this WebApplicationBuilder builder, IConfiguration configuration, string applicationName)
+    {
+        Log.Logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(configuration)
+            .Enrich.FromLogContext()
+            .Enrich.WithMachineName()
+            .Enrich.WithEnvironmentUserName()
+            .Enrich.WithExceptionDetails()
+            .Enrich.WithElasticApmCorrelationInfo()
+            .Enrich.WithProperty("ApplicationName", $"{applicationName} - {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}")
+            .Enrich.WithProperty("ApplicationVersion", Environment.GetEnvironmentVariable("APPLICATION_VERSION") ?? "0.1")
+            .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(configuration["ElasticSearch:URI"] ?? "http://localhost:9200"))
+            {
+                AutoRegisterTemplate = true,
+                CustomFormatter = new EcsTextFormatter(),
+                IndexFormat = configuration["ElasticSearch:IndexFormat"] ?? "AutoTrade.Api-logs-{0:yyyy-MM-dd}",
+                ModifyConnectionSettings = x => x.BasicAuthentication(configuration["ElasticSearch:username"], configuration["ElasticSearch:password"])
+            })
+            .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
+            .CreateLogger();
+
+        builder.Logging.ClearProviders();
+        builder.Host.UseSerilog(Log.Logger, true);
+
+        return builder;
+    }
+
     public static IServiceCollection AddElasticApmConfiguration(
         this IServiceCollection services)
     {
