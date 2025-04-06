@@ -1,4 +1,5 @@
 ﻿using MediatR;
+// using Microsoft.Extensions.Logging;
 
 namespace AutoTrader.Abstractions.Handlers;
 
@@ -6,6 +7,13 @@ public abstract class QueryHandler<TQuery, TResult> : IRequestHandler<TQuery, Re
     where TQuery : IQuery<TResult>
     where TResult : notnull
 {
+    // private readonly ILogger<QueryHandler<TQuery, TResult>> logger;
+
+    // public QueryHandler(ILogger<QueryHandler<TQuery, TResult>> logger)
+    // {
+    //     this.logger = logger;
+    // }
+
     protected abstract Task<TResult> Execute(TQuery request, CancellationToken cancellationToken);
 
     public async Task<Response<TResult>> Handle(TQuery request, CancellationToken cancellationToken)
